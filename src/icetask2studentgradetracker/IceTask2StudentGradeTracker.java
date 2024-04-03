@@ -22,9 +22,10 @@ public class IceTask2StudentGradeTracker
        int FINISH = 5;
        int option;
        String studentName;
+       String searchedStudent;
        float studentMark;
-       int marks;
-       int average;
+       float marks = 0;
+       float average = 0;
        Scanner scanner = new Scanner(System.in);
        boolean runProgram = true;
        List<String> studentNames = new ArrayList<String>();
@@ -67,8 +68,19 @@ public class IceTask2StudentGradeTracker
            } else if (option == 3) 
            {
                
+               if(!studentMarks.isEmpty() || !studentNames.isEmpty()) 
+               {
+                   for (float sMark: studentMarks) {
+                       marks += sMark;
+                   }
+                   
+                   average = marks / studentMarks.size();
+               }
+               
+               System.out.println("Average grade for the subject: " + average);
            } else if (option == 4) 
            {
+               System.out.println("Enter student's name to search: ");
                
            } else if (option == 5) 
            {
