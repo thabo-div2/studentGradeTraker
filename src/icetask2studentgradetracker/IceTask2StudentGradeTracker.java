@@ -81,6 +81,13 @@ public class IceTask2StudentGradeTracker
            } else if (option == 4) 
            {
                System.out.println("Enter student's name to search: ");
+               searchedStudent = scanner.next();
+               
+               if(studentNames.contains(searchedStudent)){
+                   int i = studentNames.indexOf(searchedStudent);
+                   float m = studentMarks.get(i);
+                   System.out.println(searchedStudent + " - " + m);
+               }
                
            } else if (option == 5) 
            {
